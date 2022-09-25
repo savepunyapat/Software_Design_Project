@@ -1,7 +1,9 @@
 package com.example.test_mongo;
 
 import com.example.test_mongo.models.Artist;
+import com.example.test_mongo.models.Order;
 import com.example.test_mongo.repositories.AllArtist;
+import com.example.test_mongo.repositories.AllOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -12,10 +14,14 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories
 public class TestMongoApplication implements CommandLineRunner {
     AllArtist artist1;
+    AllOrder order1;
     @Autowired
-    public TestMongoApplication(AllArtist artist1){
+    public TestMongoApplication(AllOrder order1,AllArtist artist1){
+
+        this.order1 = order1;
         this.artist1 = artist1;
     }
+
 
     void createArtist(){
         System.out.println("Data creation started...");
@@ -24,6 +30,13 @@ public class TestMongoApplication implements CommandLineRunner {
         artist1.save(new Artist("3","Dog","Keyboard"));
         artist1.save(new Artist("4","Earth","Piano"));
         artist1.save(new Artist("5","Jong","Drum"));
+        artist1.save(new Artist("6","Lung joke","Drum"));
+        System.out.println("Data creation complete...");
+    }
+
+    void createOrder(){
+        System.out.println("Data creation started...");
+        order1.save(new Order(90,"Malubinight","Cassette","LANY",690,"XANNy"));
         System.out.println("Data creation complete...");
     }
 
@@ -36,5 +49,7 @@ public class TestMongoApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        createArtist();
+        createOrder();
     }
 }
