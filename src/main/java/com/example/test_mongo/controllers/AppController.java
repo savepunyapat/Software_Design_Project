@@ -7,6 +7,7 @@ import com.example.test_mongo.models.*;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -31,9 +32,14 @@ public class AppController {
     }
 
     @GetMapping("/AllOrder")
-    public List<Order> getOrder(){
+    public List<Order> getOrder(Model model){
+        List<Order> listorder = orderlist.findAll();
+        System.out.println(listorder.get(1).getId());
+        System.out.println(listorder.get(1).getItemName());
+        model.addAllAttributes(listorder);
+        System.out.println("show data");
 
-        return orderlist.findAll();
+        return listorder;
     }
 
 
