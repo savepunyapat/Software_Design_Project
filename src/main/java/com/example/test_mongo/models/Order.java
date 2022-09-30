@@ -13,6 +13,10 @@ public class Order {
     private double price;
     private String info;
 
+    private int amount;
+
+
+
     public Order(int id, String itemName, String type, String artistName, double price, String info) {
         super();
         this.id = id;
@@ -22,7 +26,13 @@ public class Order {
         this.price = price;
         this.info = info;
     }
+    public int getAmount() {
+        return amount;
+    }
 
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
     public int getId() {
         return id;
     }

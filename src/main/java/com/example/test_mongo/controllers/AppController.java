@@ -27,21 +27,22 @@ public class AppController {
     }
 
     @PostMapping("/Order")
-    public String ShowOrder(){
+    public String ShowOrder(Order order){
         System.out.println("KUY");
-        //orderlist.save(new Order(71,"Malubinight","Cassette","LANY",690,"XANNy"));
+        System.out.println(order.getItemName()+order.getArtistName());
+        orderlist.save(order);
         return "Order";
     }
 
     @GetMapping("/AllOrder")
-    public List<Order> getOrder(Model model){
+    public String getOrder(Model model){
         List<Order> listorder = orderlist.findAll();
         System.out.println(listorder.get(1).getId());
         System.out.println(listorder.get(1).getItemName());
-        model.addAllAttributes(listorder);
+        model.addAttribute("listorders",listorder);
         System.out.println("show data");
 
-        return listorder;
+        return "AllOrder";
     }
 
 

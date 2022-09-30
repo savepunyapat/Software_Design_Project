@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="mt-5 container">
-      <form action="" class="mt-5 g-3">
+      <form action="Order" method="post" class="mt-5 g-3">
         <div class="block2">
           <div class="block">
             <div class="row mb-3">
@@ -23,18 +23,17 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="idInput"
+                  id="id"
+                  name="id"
                   placeholder="0-99"
                 />
               </div>
               <div class="col">
-                <label for="itemName" class="form-label fw-bold"
-                  >Item Name</label
-                >
+                <label for="itemName" class="form-label fw-bold">Item Name</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="itemName"
+                  name="itemName"
                   placeholder="ex. Malibu Night"
                 />
               </div>
@@ -46,7 +45,7 @@
               <input
                 type="radio"
                 class="form-check-input"
-                name="inlineRadioOptions"
+                name="type"
                 id="itemType1"
                 value="Cassette"
               />
@@ -56,7 +55,7 @@
               <input
                 type="radio"
                 class="form-check-input"
-                name="inlineRadioOptions"
+                name="type"
                 id="itemType2"
                 value="Vinyl"
               />
@@ -66,7 +65,7 @@
               <input
                 type="radio"
                 class="form-check-input"
-                name="inlineRadioOptions"
+                name="type"
                 id="itemType3"
                 value="CD"
               />
@@ -81,6 +80,7 @@
                 <input
                   type="text"
                   class="form-control"
+                  name="artistName"
                   id="artistInput"
                   placeholder="ex. Arctic Monkeys"
                 />
@@ -89,6 +89,7 @@
                 <label for="price" class="form-label fw-bold">Price</label>
                 <input
                   type="text"
+                  name="price"
                   class="form-control"
                   id="price"
                   placeholder="000-1XXX Baht.-"
@@ -98,7 +99,7 @@
             <div class="col">
               <label for="infoInput" class="form-label">Track Info</label>
               <textarea
-                name="infoInput"
+                name="info"
                 class="form-control"
                 id="infoInput"
                 cols="30"

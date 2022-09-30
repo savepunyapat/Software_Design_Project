@@ -9,7 +9,17 @@
             <h1>
                 Show order
             </h1>
-            <span>F</span>
+            <div>
+                <table>
+                    <tr th:each="order1 : ${listorders}">
+                        <td th:text="${order1.id}"></td>
+                        <td th:text="${order1.itemName}"></td>
+                        <td th:text="${order1.type}"></td>
+                        <td th:text="${order1.artistName}"></td>
+                        <td th:text="${order1.price}"></td>
+                    </tr>
+                </table>
+            </div>
     </div>
 </body>
 </html>
