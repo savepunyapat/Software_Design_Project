@@ -24,9 +24,9 @@ public class AppController {
     }
 
     @PostMapping("/Order")
-    public String ShowOrder(@ModelAttribute("Order1") Order order){
+    public String ShowOrder(){
         System.out.println("KUY");
-        //orderlist.save(new Order(81,"Malubinight","Cassette","LANY",690,"XANNy"));
+        //orderlist.save(new Order(71,"Malubinight","Cassette","LANY",690,"XANNy"));
         return "Order";
     }
 

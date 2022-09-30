@@ -1,0 +1,24 @@
+*{
+	background-color: rgb(245, 245, 245);
+}
+
+.containerH {
+	width:100%;
+	height: 100%;
+	
+}
+.bdr {
+	border-radius: 5px;
+	overflow: hidden;
+}
+.name {
+	background-color: transparent;
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
+.name:hover{
+	color: white;
+	opacity: 0.5;
+	transition: 0.2s;
+}
