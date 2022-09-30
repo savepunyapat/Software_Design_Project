@@ -34,7 +34,6 @@ public class AppController {
         orderlist.save(order);
         return "Order";
     }
-
     @GetMapping("/AllOrder")
     public String getOrder(Model model){
         List<Order> listorder = orderlist.findAll();
@@ -45,9 +44,9 @@ public class AppController {
     @GetMapping("/delete/{id}")
     public String deleteProduct(@PathVariable(name = "id") int id){
         orderlist.deleteAllById(id);
-        return "redirect:/Order";
+        return "redirect:/AllOrder";
     }
-    /*
+
     @GetMapping("/edit/{id}")
     public ModelAndView showEditPage(@PathVariable(name = "id") int id){
         ModelAndView editView = new ModelAndView("edit");
@@ -55,6 +54,6 @@ public class AppController {
         editView.addObject("orderob",orderob);
         return editView;
     }
-    */
+
 
 }
