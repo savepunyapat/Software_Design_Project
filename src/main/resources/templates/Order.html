@@ -19,7 +19,7 @@
           <div class="block">
             <div class="row mb-3">
               <div class="col mb-3">
-                <label for="idInput" class="form-label fw-bold">Stock ID</label>
+                <label for="id" class="form-label fw-bold">Stock ID</label>
                 <input
                   type="text"
                   class="form-control"
@@ -33,6 +33,7 @@
                 <input
                   type="text"
                   class="form-control"
+                  id="itemName"
                   name="itemName"
                   placeholder="ex. Malibu Night"
                 />
@@ -41,8 +42,9 @@
                 <label for="itemQty" class="form-label fw-bold">Amount</label>
                 <input
                   type="text"
+                  id="itemQty"
                   class="form-control ms-3 w-25"
-                  name="itemQty"
+                  name="amount"
                   placeholder="ex. 0-99"
                 />
               </div>
@@ -101,8 +103,7 @@
                   name="price"
                   class="form-control"
                   id="price"
-                  placeholder="000-1XXX Baht.-"
-                />
+                  placeholder="000-1XXX Baht.-"/>
               </div>
             </div>
             <div class="col">
@@ -112,8 +113,7 @@
                 class="form-control"
                 id="infoInput"
                 cols="30"
-                rows="10"
-              ></textarea>
+                rows="10"></textarea>
             </div>
             <div class="mt-3">
               <button class="btn btn-success" type="submit">Add Item</button>
