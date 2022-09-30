@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+*{
+	font-family: 'Roboto', sans-serif;
+}
+
+.mytable{
+	overflow: hidden;
+	border-style: hidden;
+	border-radius: 10px;
+	border-collapse: collapse;
+	width: 1000px;
+	border: 1px solid rgb(32, 32, 32);
+	
+}
+th{
+	font-weight: 400;
+	background-color: rgb(44, 44, 44);
+	color: white;
+	text-align: left;
+	padding: 8px;
+	border: 1px solid rgb(78, 78, 78);
+	overflow: hidden;
+	
+	
+}
+td{
+	border: 1px solid rgba(22, 22 ,22 ,0.3);
+	text-align: left;
+	
+	padding: 8px;
+	
+}
+tr{
+	line-height: 40px;
+}
+td.menu{
+	text-align: center;
+}
+i.icon.fa.fa-trash{
+	font-size: 22px;
+	color: rgb(59, 59, 59);
+	cursor: pointer;
+}
+i.icon.fa.fa-pencil{
+	padding-left: 20px;
+	font-size: 22px;
+	color: rgb(59, 59, 59);
+	cursor: pointer;
+}
+a:visited{
+	color: rgb(59, 59, 59);
+}
+a:hover{
+	opacity: 0.5;
+	transition: 0.5s;
+}
