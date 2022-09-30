@@ -1,0 +1,9 @@
+.kuy2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kuy {
+    width: 50%;
+}
