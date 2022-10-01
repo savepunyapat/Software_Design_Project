@@ -9,7 +9,10 @@
 	border-radius: 10px;
 	border-collapse: collapse;
 	width: 1000px;
-	border: 1px solid rgb(32, 32, 32);
+	border: 0px solid;
+    padding: 10px;
+    box-shadow: 5px 10px 50px rgb(0 0 0 / 20%);
+    border-radius: 5px;
 	
 }
 th{
