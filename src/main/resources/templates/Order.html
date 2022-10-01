@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
+	<div id="nav-placeholder"></div>
     <div class="mt-5 container">
       <form action="Order" method="post" class="mt-5 g-3">
 		
@@ -129,5 +130,10 @@
         </div>
       </form>
     </div>
+	<script>
+		$(function(){
+		  $("#nav-placeholder").load("nav.html");
+		});
+	</script>
   </body>
 </html>

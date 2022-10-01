@@ -4,6 +4,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>All Order</title>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 	<link
 			rel="stylesheet"
@@ -14,8 +15,9 @@
     
 </head>
 <body>
+	<div id="nav-placeholder"></div>
 	<div align="center">
-		<h1>
+		<h1 style="margin-top: 1.5em;">
 			Show order
 		</h1>
 		<div>
@@ -43,4 +45,11 @@
 				</tr>
 			</table>
 		</div>
+
 </div>
+<script>
+	$(function(){
+	  $("#nav-placeholder").load("nav.html");
+	});
+</script>
+</body>
