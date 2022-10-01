@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface AllOrder extends MongoRepository<Order,String> {
 
-    @Query("{id: '?0'}")
+    @Query("{'id': ?0}")
     List<Order> findOrderById(int id);
 
 

@@ -1,5 +1,7 @@
 package com.example.test_mongo.controllers;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import com.example.test_mongo.models.OrderInfo;
@@ -39,6 +41,11 @@ public class AppController {
     public String ShowOrder(Order order, OrderInfo orderInfo, OrderPrice orderPrice){
         System.out.println("Getting Order...");
         System.out.println(order.getItemName()+order.getArtistName());
+        java.util.Date date= new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        int month = cal.get(Calendar.MONTH)+1;
+        orderPrice.setMonth(month);
         orderInfo1.save(orderInfo);
         orderPrice1.save(orderPrice);
         orderlist.save(order);
@@ -69,6 +76,31 @@ public class AppController {
         List<Order> orderob = orderlist.findOrderById(id);
         editView.addObject("orderob",orderob);
         return editView;
+    }
+
+    @GetMapping("/Profit")
+    public String getProfit(Model model){
+        int allsum =0,monthly=0;
+        java.util.Date date= new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        int month = cal.get(Calendar.MONTH)+1;
+        System.out.println(month);
+        List<OrderPrice> priceslist = orderPrice1.findAll();
+        List<OrderPrice> pricesMonth = orderPrice1.findAllByMonth(11);
+        for (OrderPrice orderPrice : priceslist) {
+            allsum += orderPrice.getPrice();
+        }
+        for (OrderPrice orderPrice : pricesMonth){
+            monthly += orderPrice.getPrice();
+        }
+        model.addAttribute("month",monthly);
+        System.out.println(allsum);
+        System.out.println("Month : "+monthly);
+        System.out.println("all : "+allsum);
+        model.addAttribute("valsum",allsum);
+
+        return "index";
     }
 
 
