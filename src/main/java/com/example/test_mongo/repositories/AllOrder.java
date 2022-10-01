@@ -11,7 +11,7 @@ import java.util.List;
 public interface AllOrder extends MongoRepository<Order,String> {
 
     @Query("{'id': ?0}")
-    List<Order> findOrderById(int id);
+    Order findOrderById(int id);
 
 
     void deleteAllById(int id);

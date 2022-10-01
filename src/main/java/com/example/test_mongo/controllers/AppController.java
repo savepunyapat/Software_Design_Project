@@ -12,10 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import com.example.test_mongo.models.Order;
 import com.example.test_mongo.repositories.AllOrder;
 import org.springframework.web.servlet.ModelAndView;
@@ -70,14 +67,19 @@ public class AppController {
         orderPrice1.deleteAllById(id);
         return "redirect:/AllOrder";
     }
-
-
+    @PostMapping("/replace")
+    public String replaceData(Order order,OrderInfo orderInfo,OrderPrice orderPrice){
+        orderlist.save(order);
+        orderPrice1.save(orderPrice);
+        orderInfo1.save(orderInfo);
+        return "redirect:/AllOrder";
+    }
     @GetMapping("/edit/{id}")
     public ModelAndView showEditPage(@PathVariable(name = "id") int id,Model model){
         ModelAndView editView = new ModelAndView("edit");
-        List<Order> orderob = orderlist.findOrderById(id);
+        Order orderob = orderlist.findOrderById(id);
         model.addAttribute("orderid",id);
-        editView.addObject("orderob",orderob);
+        editView.addObject("orderobs",orderob);
         return editView;
     }
 
