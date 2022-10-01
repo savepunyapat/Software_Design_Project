@@ -9,6 +9,7 @@ import com.example.test_mongo.models.OrderPrice;
 import com.example.test_mongo.repositories.AllOrderInfo;
 import com.example.test_mongo.repositories.AllOrderPrice;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -70,10 +71,12 @@ public class AppController {
         return "redirect:/AllOrder";
     }
 
+
     @GetMapping("/edit/{id}")
-    public ModelAndView showEditPage(@PathVariable(name = "id") int id){
+    public ModelAndView showEditPage(@PathVariable(name = "id") int id,Model model){
         ModelAndView editView = new ModelAndView("edit");
         List<Order> orderob = orderlist.findOrderById(id);
+        model.addAttribute("orderid",id);
         editView.addObject("orderob",orderob);
         return editView;
     }
@@ -86,6 +89,7 @@ public class AppController {
         cal.setTime(date);
         int month = cal.get(Calendar.MONTH)+1;
         System.out.println(month);
+
         List<OrderPrice> priceslist = orderPrice1.findAll();
         List<OrderPrice> pricesMonth = orderPrice1.findAllByMonth(11);
         for (OrderPrice orderPrice : priceslist) {
