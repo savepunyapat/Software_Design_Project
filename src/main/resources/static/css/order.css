@@ -32,3 +32,6 @@ i.fa.fa-pencil{
 	font-size: 20px;
 	padding-right: 5px;
 }
+input#editID{
+	background: rgba(0,0,0,0.2);
+}

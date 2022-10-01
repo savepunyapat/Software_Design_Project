@@ -8,7 +8,7 @@ public class OrderPrice {
 
     @Id
     private int id;
-    private int price;
+    private double price;
     private int month;
 
     public int getMonth() {
@@ -22,7 +22,7 @@ public class OrderPrice {
     public OrderPrice() {
     }
 
-    public OrderPrice(int id, int price) {
+    public OrderPrice(int id, double price) {
         this.id = id;
         this.price = price;
     }
@@ -35,11 +35,11 @@ public class OrderPrice {
         this.id = id;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
