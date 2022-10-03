@@ -62,6 +62,7 @@ public class AppController {
     }
     @GetMapping("/delete/{id}")
     public String deleteProduct(@PathVariable(name = "id") int id){
+
         orderlist.deleteAllById(id);
         orderInfo1.deleteAllById(id);
         orderPrice1.deleteAllById(id);
@@ -69,6 +70,11 @@ public class AppController {
     }
     @PostMapping("/replace")
     public String replaceData(Order order,OrderInfo orderInfo,OrderPrice orderPrice){
+        java.util.Date date= new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        int month = cal.get(Calendar.MONTH)+1;
+        orderPrice.setMonth(month);
         orderlist.save(order);
         orderPrice1.save(orderPrice);
         orderInfo1.save(orderInfo);
@@ -107,6 +113,14 @@ public class AppController {
         model.addAttribute("valsum",allsum);
 
         return "index";
+    }
+
+    @GetMapping("/info/{id}")
+    public ModelAndView showInf(@PathVariable(name= "id")int id,Model model){
+        ModelAndView editView = new ModelAndView("info");
+        Order orderob = orderlist.findOrderById(id);
+        editView.addObject("orderInfos",orderob);
+        return editView;
     }
 
 }

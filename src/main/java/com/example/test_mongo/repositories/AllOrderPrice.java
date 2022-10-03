@@ -14,7 +14,6 @@ public interface AllOrderPrice extends MongoRepository<OrderPrice,String> {
     List<OrderPrice> findAllByMonth(int month);
     @Query("{month: '?0'}")
     List<OrderPrice> findById(int month);
-    @Query()
 
     void deleteAllById(int id);
 
