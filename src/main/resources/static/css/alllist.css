@@ -2,7 +2,9 @@
 *{
 	font-family: 'Roboto', sans-serif;
 }
-
+body.bg{
+	background-color: rgb(243, 243, 243);
+}
 .mytable{
 	overflow: hidden;
 	border-style: hidden;
