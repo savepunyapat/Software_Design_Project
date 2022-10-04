@@ -9,7 +9,6 @@ import com.example.test_mongo.models.OrderPrice;
 import com.example.test_mongo.repositories.AllOrderInfo;
 import com.example.test_mongo.repositories.AllOrderPrice;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -89,6 +88,14 @@ public class AppController {
         return editView;
     }
 
+    @GetMapping("/info/{id}")
+    public ModelAndView showInf(@PathVariable(name= "id")int id){
+        ModelAndView editView = new ModelAndView("info");
+        OrderInfo orderinfo = orderInfo1.findOrderInfoById(id);
+        editView.addObject("orderInfo",orderinfo);
+        return editView;
+    }
+
     @GetMapping("/Profit")
     public String getProfit(Model model){
         int allsum =0,monthly=0;
@@ -115,12 +122,6 @@ public class AppController {
         return "index";
     }
 
-    @GetMapping("/info/{id}")
-    public ModelAndView showInf(@PathVariable(name= "id")int id,Model model){
-        ModelAndView editView = new ModelAndView("info");
-        Order orderob = orderlist.findOrderById(id);
-        editView.addObject("orderInfos",orderob);
-        return editView;
-    }
+
 
 }
