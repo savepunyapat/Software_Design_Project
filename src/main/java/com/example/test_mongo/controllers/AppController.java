@@ -90,7 +90,7 @@ public class AppController {
 
     @GetMapping("/info/{id}")
     public ModelAndView showInf(@PathVariable(name= "id")int id){
-        ModelAndView editView = new ModelAndView("info");
+        ModelAndView editView = new ModelAndView("");
         OrderInfo orderinfo = orderInfo1.findOrderInfoById(id);
         editView.addObject("orderInfo",orderinfo);
         return editView;
@@ -106,20 +106,22 @@ public class AppController {
         System.out.println(month);
 
         List<OrderPrice> priceslist = orderPrice1.findAll();
-        List<OrderPrice> pricesMonth = orderPrice1.findAllByMonth(11);
+        List<OrderPrice> pricesMonth = orderPrice1.findAllByMonth(month);
         for (OrderPrice orderPrice : priceslist) {
             allsum += orderPrice.getPrice();
         }
         for (OrderPrice orderPrice : pricesMonth){
             monthly += orderPrice.getPrice();
         }
+        model.addAttribute("priceList",priceslist);
+        model.addAttribute("priceMonth",pricesMonth);
         model.addAttribute("month",monthly);
         System.out.println(allsum);
         System.out.println("Month : "+monthly);
         System.out.println("all : "+allsum);
         model.addAttribute("valsum",allsum);
 
-        return "index";
+        return "info";
     }
 
 
