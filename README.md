@@ -1,2 +1,2 @@
-# sd_project
+# Web design project
  
