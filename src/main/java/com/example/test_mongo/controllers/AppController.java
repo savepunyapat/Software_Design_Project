@@ -90,11 +90,13 @@ public class AppController {
 
     @GetMapping("/info/{id}")
     public ModelAndView showInf(@PathVariable(name= "id")int id){
-        ModelAndView editView = new ModelAndView("");
+        ModelAndView editView = new ModelAndView("TrackInfo");
         OrderInfo orderinfo = orderInfo1.findOrderInfoById(id);
         editView.addObject("orderInfo",orderinfo);
         return editView;
     }
+
+
 
     @GetMapping("/Profit")
     public String getProfit(Model model){
@@ -123,6 +125,7 @@ public class AppController {
 
         return "info";
     }
+
 
 
 
