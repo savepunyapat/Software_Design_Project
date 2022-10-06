@@ -24,15 +24,21 @@
 					<div class="card-header text-center bg-primary text-white fw-bold">
 					  Monthly Income
 					</div>
-					<div class="card-body">
-					  <h5 class="card-title text-start fw-bold">สรุปรายรับในเดือน</h5>
+					<div class="card-body" >
+					  <h5 class="card-title text-start fw-bold">สรุปรายรับทั้งเดือน</h5>
 					  <p class="card-text text-start">
-							<ul>
-								<li>กูรวย</li>
-							</ul>
 
+						<ul>
+							 <li th:text="'รายได้เดือนนี้ : '+${month}"></li>
+						</ul>
+						<ul>
+							<ul th:each="plist : ${priceMonth}">
+								<li th:text="'Order ID : '+${plist.id}"></li>
+								<li th:text="'เดือน : '+ ${plist.month}"></li>
+								<li th:text="'ราคา : '+${plist.price}+' บาท'"></li>
+							</ul>
+						</ul>
 					  </p>
-					  
 					</div>
 					<div class="card-footer text-muted">
 					  JES Record
@@ -45,9 +51,19 @@
 					  Annual Income
 					</div>
 					<div class="card-body">
-					  <h5 class="card-title text-start fw-bold">สรุปรายรับในปี</h5>
-					  <p class="card-text text-start"></p>
-					  
+					    <h5 class="card-title text-start fw-bold">สรุปรายรับทั้งหมด</h5>
+					    <p class="card-text text-start"></p>
+					    <ul>
+						    <li th:text="'รายได้ทั้งหมด : '+${valsum}"></li>
+					    </ul>
+						<ul>
+							<ul th:each="plist : ${priceList}">
+								<li th:text="'Order ID : '+${plist.id}"></li>
+								<li th:text="'เดือน : '+ ${plist.month}"></li>
+								<li th:text="'ราคา : '+${plist.price}+' บาท'"></li>
+							</ul>
+						</ul>
+
 					</div>
 					<div class="card-footer text-muted">
 					  JES Record
@@ -59,6 +75,10 @@
 
 		  
 	</div>
-	
+	<p></p>
 </body>
 </html>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5a0c4d216f666770abbd57ae95a4992af4cc3908
