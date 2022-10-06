@@ -39,6 +39,7 @@ tr{
 	line-height: 40px;
 }
 td.menu{
+	border-left: 1px solid rgba(0, 0, 0, 0.082);
 	text-align: center;
 }
 i.icon.fa.fa-trash{
@@ -47,7 +48,13 @@ i.icon.fa.fa-trash{
 	cursor: pointer;
 }
 i.icon.fa.fa-pencil{
-	padding-left: 20px;
+	padding-left: 25px;
+	font-size: 22px;
+	color: rgb(59, 59, 59);
+	cursor: pointer;
+}
+i.icon.fa.fa-eye{
+	padding-left: 25px;
 	font-size: 22px;
 	color: rgb(59, 59, 59);
 	cursor: pointer;

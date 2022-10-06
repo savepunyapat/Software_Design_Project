@@ -46,10 +46,10 @@
 					<td th:text="${order1.artistName}"></td>
 					<td th:text="${order1.price}"></td>
 					<td th:text="${order1.amount}"></td>
-					<td class="menu">
-						<a th:href="@{'/info/' + ${order1.id}}">info</a>
+					<td class="menu text-center">
 						<a th:href="@{'/delete/' + ${order1.id}}" role="button"><i class="icon fa fa-trash"aria-hidden="true"></i></a>
 						<a th:href="@{'/edit/' + ${order1.id}}" role="button"><i class="icon fa fa-pencil"aria-hidden="true"></i></a>
+						<a th:href="@{'/info/' + ${order1.id}}" role="button"> <i class = "icon fa fa-eye" aria-hidden="true"></i> </a>
 					</td>
 				</tr>
 
