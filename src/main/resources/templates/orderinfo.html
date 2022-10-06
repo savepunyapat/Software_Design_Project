@@ -21,36 +21,19 @@
 </head>
 <body class ="bg">
 	<div class="mt-5 container">
-		<div class="card">
-			<div class="card-header fw-bold bg-primary text-white">
+		<div class="card" th:object="${orderR}">
+			<div class="card-header fw-bold bg-primary text-white" th:text="${orderR.itemName}" >
 				<i class="fa fa-shopping-cart" aria-hidden="true"> </i>
-			   SUCK IT AND SEE
+
 			</div>
-			<div class="card-body">
+			<div class="card-body" th:object="${orderInfo}" >
 			  <blockquote class="blockquote mb-0">
-				<p>SUCK IT AND SEE ( CD )</p>
-				<p class="info fs-6">Light and airy, filmic but intimate, 
-					carefully arranged but deceptively powerful, 
-					SUCK IT AND SEE is Arctic Monkeys fourth album. Recorded at Sound City Studios in Los Angeles with long-time producer/ collaborator James Ford, it has a summery pop feel: With the bulk of work completed on the West Coast during January, it's got the feel-good sound of stealing some winter sun, some out of season Vitamin D. with SUCK IT AND SEE the band perfectly mesh their hard and soft sides. The album is lyrically their most verbose since their record-breaking debut WHATEVER PEOPLE SAY I AM, THAT'S WHAT I'M NOT. SUCK IT AND SEE is not just the sound of a band working in perfect, 
-					energetic sync, it's one of the years best albums.</p>
-					<ul class="fs-6">
-						<li>She's Thunderstorms</li>
-						<li>Black Treacle</li>
-						<li>Brick By Brick</li>
-						<li>The Hellcat Spangled Shalalala</li>
-						<li>Don't Sit Down Cause I've Moved Your Chair</li>
-						<li>Library Pictures</li>
-						<li>All My Own Stunts</li>
-						<li>Reckless Serenade</li>
-						<li>Piledriver Waltz</li>
-						<li>Love Is a Laserquest</li>
-						<li>Suck It and See</li>
-						<li>That's Where You're Wrong</li>
-					</ul>
+				<p th:text="${orderR.itemName}"></p>
+				<p class="info fs-6" th:utext="${orderInfo.info}"></p>
 			</blockquote>
 			</div>
 		  </div>
 	</div>
-	
+
 </body>
 </html>

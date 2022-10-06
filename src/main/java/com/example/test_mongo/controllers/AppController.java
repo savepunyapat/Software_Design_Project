@@ -89,9 +89,12 @@ public class AppController {
     }
 
     @GetMapping("/info/{id}")
-    public ModelAndView showInf(@PathVariable(name= "id")int id){
-        ModelAndView editView = new ModelAndView("TrackInfo");
+    public ModelAndView showInf(@PathVariable(name= "id")int id,Model model){
+        ModelAndView editView = new ModelAndView("orderinfo");
+        Order order1 = orderlist.findOrderById(id);
         OrderInfo orderinfo = orderInfo1.findOrderInfoById(id);
+        System.out.println(orderinfo.getInfo());
+        editView.addObject("orderR",order1);
         editView.addObject("orderInfo",orderinfo);
         return editView;
     }
