@@ -17,6 +17,7 @@
 	<title>Document</title>
 </head>
 <body class="bg">
+<div th:replace="/nav :: navbar"></div>
 	<div class="mt-5 container">
 		<div class="row">
 			<div class="col">
@@ -25,7 +26,7 @@
 					  Monthly Income
 					</div>
 					<div class="card-body" >
-					  <h5 class="card-title text-start fw-bold">สรุปรายรับทั้งเดือน</h5>
+					  <h5 class="card-title text-center fw-bold">สรุปรายรับทั้งเดือน</h5>
 					  <p class="card-text text-start">
 
 						<ul>
@@ -51,7 +52,7 @@
 					  Annual Income
 					</div>
 					<div class="card-body">
-					    <h5 class="card-title text-start fw-bold">สรุปรายรับทั้งหมด</h5>
+					    <h5 class="card-title text-center fw-bold">สรุปรายรับทั้งหมด</h5>
 					    <p class="card-text text-start"></p>
 					    <ul>
 						    <li th:text="'รายได้ทั้งหมด : '+${valsum}"></li>
@@ -78,7 +79,3 @@
 	<p></p>
 </body>
 </html>
-<<<<<<< HEAD
-=======
-
->>>>>>> 5a0c4d216f666770abbd57ae95a4992af4cc3908

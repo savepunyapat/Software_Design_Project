@@ -37,8 +37,8 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body>
-  <div th:replace="/nav :: kuy"></div>
+  <body class="bg">
+  <div th:replace="/nav :: navbar"></div>
     <div class="mt-5 container">
       <form action="Order" method="post" class="mt-5 g-3">
 		
@@ -159,7 +159,7 @@
 
   <script>
     $('#summernote').summernote({
-      placeholder: 'Hello Bootstrap 4',
+      placeholder: 'Track info here...',
       tabsize: 2,
       height: 300
     });

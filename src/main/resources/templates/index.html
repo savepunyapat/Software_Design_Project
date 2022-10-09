@@ -3,25 +3,38 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link
+			rel="stylesheet"
+			href="../static/css/index.css"
+			th:href="@{/css/index.css}"
+	/>
 	<link rel="stylesheet" href="../static/css/index.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 	<title>Index</title>
 </head>
-<body style="background-color: rgb(245, 245, 245);">
-	<div class="container">
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/_0CXH-8EbU0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		<table class="bdr table table-dark table-striped mt-5 border-5">
-			<thead>
-				<tr>
-					<th scope="col">Artist Name</th>
-				</tr>
-			</thead>
-			<tbody>
-				<th scope="row"><a class="name" href="https://www.facebook.com" target="/_blank"> A-Z</a></th>
-			</tbody>
-		  </table>
-		<p th:text="${month}"></p>
-		<p th:text="${valsum}"></p>
-	</div>
+<body class="bg">
+	<div th:replace="/nav :: navbar"></div>
+	<div class="poster"></div>
+	<div class="bg-text">
+		<h1>JES Record</h1>
+		<p>Music Merchandise Stock Management</p>
+	  </div>
+	  <div class="bg-btn">
+		<a href="">
+			<img id="add" th:src="@{/css/sign-add-icon.png}" alt="" >
+			<p id="addText">Add Stock</p>
+		</a>
+		<a href="">
+			<img id="list" th:src="@{/css/306470.png}" alt="">
+			<p id="showText">Show Stock</p>
+		</a>
+		<a href="">
+
+			<img id="profit" th:src="@{/css/306445.png}" alt="">
+			<p id="profText">Profit</p>
+		</a>
+		
+		
+	  </div>
 </body>
 </html>
