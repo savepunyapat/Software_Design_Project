@@ -99,8 +99,6 @@ public class AppController {
         return editView;
     }
 
-
-
     @GetMapping("/Profit")
     public String getProfit(Model model){
         int allsum =0,monthly=0;
